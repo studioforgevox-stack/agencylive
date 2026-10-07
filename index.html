@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Setu Systems helps home service businesses stop losing $30K–$80K/year from missed calls, weak reviews, dead quotes, and websites that don't convert. For established owners doing $500K+/year.">
+    <title>Setu Systems | Stop Losing $30K–$80K/Year From Missed Calls, Weak Reviews &amp; Dead Leads</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET + BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #050505; color: #e5e5e5; line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ===== UTILITY ===== */
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        .text-center { text-align: center; }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(5, 5, 5, 0.88);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.08);
+            padding: 16px 0;
+            transition: padding 0.3s ease, box-shadow 0.3s ease;
+        }
+        .site-header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(245, 158, 11, 0.06);
+        }
+        .header-inner {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1140px; margin: 0 auto; padding: 0 24px;
+        }
+        .logo { font-size: 1.4rem; font-weight: 900; letter-spacing: 0.1em; color: #ffffff; }
+        .logo span { color: #f59e0b; }
+
+        /* ===== BUTTONS ===== */
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b 0%, #d4af37 100%);
+            color: #050505; font-weight: 800; font-size: 0.85rem;
+            padding: 14px 32px; border-radius: 5px;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            border: none; cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 16px rgba(245, 158, 11, 0.15);
+            text-decoration: none;
+        }
+        .btn-cta:hover { transform: scale(1.04); box-shadow: 0 0 28px rgba(245, 158, 11, 0.3); }
+        .btn-cta:active { transform: scale(0.98); }
+        .btn-cta-lg { font-size: 1.05rem; padding: 20px 48px; border-radius: 6px; }
+        .btn-cta-xl { font-size: 1.15rem; padding: 22px 56px; border-radius: 6px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative; min-height: 100vh; display: flex;
+            align-items: center; padding: 140px 0 100px; overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80') center/cover no-repeat;
+            filter: brightness(0.15) saturate(0.7);
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(5,5,5,0.6) 0%, rgba(5,5,5,0.85) 50%, #050505 100%);
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 860px; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            color: #f59e0b; font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            padding: 8px 20px; border-radius: 4px; margin-bottom: 32px;
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 900;
+            line-height: 1.08; color: #ffffff; margin-bottom: 28px;
+        }
+        .hero h1 .gold { color: #f59e0b; }
+        .hero-sub {
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: #b5b5b5;
+            margin-bottom: 16px; max-width: 660px; line-height: 1.7;
+        }
+        .hero-math {
+            font-size: 0.95rem; color: #8a8a8a; margin-bottom: 40px; max-width: 640px; line-height: 1.7;
+        }
+        .hero-math strong { color: #d4af37; font-weight: 600; }
+        .hero-trust {
+            margin-top: 20px; font-size: 0.78rem; color: #666;
+            letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;
+        }
+        .hero-trust span { color: #b08d28; }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 100px 0; }
+        .section-dark { background: #050505; }
+        .section-card { background: #0a0a0a; }
+        .section-label {
+            display: inline-block; font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: #b08d28; margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: clamp(1.9rem, 3.8vw, 3.2rem); font-weight: 900;
+            color: #ffffff; line-height: 1.12; margin-bottom: 20px;
+        }
+        .section-subtitle {
+            font-size: 1.05rem; color: #8a8a8a; max-width: 620px; line-height: 1.7;
+        }
+        .section-subtitle.center { margin: 0 auto; }
+        .gold-rule { width: 48px; height: 2px; background: #b08d28; border: none; margin: 20px 0; }
+        .gold-rule.center { margin: 20px auto; }
+
+        /* ===== LEAKS SECTION ===== */
+        .leaks-list { margin-top: 64px; }
+        .leak-item {
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 28px;
+            padding: 48px 0;
+            border-bottom: 1px solid #151515;
+            align-items: start;
+        }
+        .leak-item:first-child { padding-top: 0; }
+        .leak-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .leak-num {
+            font-size: 2.8rem; font-weight: 900; color: rgba(245,158,11,0.15);
+            line-height: 1; letter-spacing: -0.02em;
+        }
+        .leak-content h3 {
+            font-size: 1.3rem; font-weight: 800; color: #ffffff; margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .leak-content p {
+            font-size: 0.92rem; color: #8a8a8a; line-height: 1.7; margin-bottom: 16px;
+            max-width: 640px;
+        }
+        .leak-stat {
+            display: inline-block;
+            font-size: 0.78rem; font-weight: 600; color: #b08d28;
+            padding: 6px 14px;
+            background: rgba(245,158,11,0.04);
+            border: 1px solid rgba(245,158,11,0.1);
+            border-radius: 4px;
+            letter-spacing: 0.02em;
+        }
+        .leak-stat-note {
+            display: block; font-size: 0.7rem; color: #555; margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* ===== PIPELINE FLOW DIAGRAMS ===== */
+        .pipe {
+            display: flex; align-items: center; gap: 4px;
+            padding: 16px 20px;
+            background: #0d0d0d;
+            border: 1px solid #181818;
+            border-radius: 6px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+        }
+        .pn {
+            flex-shrink: 0;
+            padding: 7px 13px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            white-space: nowrap;
+            background: #111;
+            border: 1px solid #222;
+            color: #999;
+            line-height: 1.3;
+        }
+        .pn-ok { border-color: rgba(245,158,11,0.18); color: #d4d4d4; }
+        .pn-fail { border-color: rgba(239,68,68,0.2); color: #e88; background: rgba(239,68,68,0.03); }
+        .pn-result {
+            border-color: rgba(245,158,11,0.3);
+            color: #f59e0b;
+            background: rgba(245,158,11,0.05);
+        }
+        .pa {
+            flex-shrink: 0; padding: 0 5px;
+            color: rgba(245,158,11,0.3); font-size: 0.8rem; font-weight: 400;
+        }
+        .pa-fail { color: rgba(239,68,68,0.35); }
+        .px {
+            flex-shrink: 0; padding: 0 6px;
+            color: #c44; font-weight: 800; font-size: 0.85rem;
+        }
+
+        /* Dual-path pipe (for reviews showing two outcomes) */
+        .pipe-dual {
+            display: flex; flex-direction: column; gap: 8px;
+            padding: 16px 20px;
+            background: #0d0d0d;
+            border: 1px solid #181818;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .pipe-dual .pipe {
+            margin-bottom: 0; padding: 10px 16px;
+            background: transparent; border: none;
+        }
+        .pipe-dual-label {
+            font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.12em; padding-left: 16px;
+        }
+        .pipe-dual-label.good { color: rgba(245,158,11,0.5); }
+        .pipe-dual-label.bad { color: rgba(239,68,68,0.45); }
+
+        /* ===== MATH SECTION ===== */
+        .math-section {
+            background: #070707;
+            border-top: 1px solid rgba(245, 158, 11, 0.06);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.06);
+        }
+        .math-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px; }
+        .math-card {
+            background: #0c0c0c; border: 1px solid #181818; border-radius: 8px;
+            padding: 32px; position: relative; overflow: hidden;
+        }
+        .math-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, #b08d28, rgba(176,141,40,0.2));
+        }
+        .math-card-label {
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
+            text-transform: uppercase; color: #b08d28; margin-bottom: 12px;
+        }
+        .math-card h3 {
+            font-size: 1rem; font-weight: 600; color: #999; margin-bottom: 20px; line-height: 1.55;
+        }
+        .math-big-number {
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 900; color: #f59e0b;
+            line-height: 1; margin-bottom: 6px;
+        }
+        .math-sub { color: #777; font-weight: 600; font-size: 0.85rem; }
+        .math-calc {
+            font-size: 0.8rem; color: #555; line-height: 1.8; margin-top: 16px;
+            padding-top: 16px; border-top: 1px solid #181818;
+        }
+        .math-calc strong { color: #888; }
+        .math-model-tag {
+            display: inline-block; font-size: 0.62rem; font-weight: 600;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: #555; margin-top: 12px;
+            padding: 3px 8px; border: 1px solid #222; border-radius: 3px;
+        }
+        .math-total {
+            background: rgba(245,158,11,0.03);
+            border: 1px solid rgba(245, 158, 11, 0.12); border-radius: 10px;
+            padding: 48px 32px; margin-top: 48px; text-align: center;
+        }
+        .math-total-label {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+            text-transform: uppercase; color: #b08d28; margin-bottom: 16px;
+        }
+        .math-total-number {
+            font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 900;
+            background: linear-gradient(135deg, #f59e0b 0%, #d4af37 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; line-height: 1.1;
+        }
+        .math-total p {
+            font-size: 0.95rem; color: #666; margin-top: 16px;
+            max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.65;
+        }
+
+        /* ===== SERVICES / SYSTEMS ===== */
+        .systems-intro {
+            display: flex; align-items: center; gap: 12px;
+            margin: 48px 0 40px;
+            padding: 16px 20px;
+            background: #0d0d0d; border: 1px solid #181818; border-radius: 6px;
+        }
+        .sys-step-label {
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: #666; white-space: nowrap;
+        }
+        .sys-step-label span { color: #b08d28; }
+        .sys-arrow { color: rgba(245,158,11,0.2); font-size: 0.75rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 0; }
+        .service-card {
+            background: #0c0c0c; border: 1px solid #181818; border-radius: 8px;
+            padding: 32px 28px; transition: border-color 0.3s ease;
+            position: relative;
+        }
+        .service-card:hover { border-color: rgba(245, 158, 11, 0.15); }
+        .service-num {
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+            text-transform: uppercase; color: #444; margin-bottom: 12px;
+        }
+        .service-card h3 {
+            font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 14px;
+            line-height: 1.3;
+        }
+        .service-card p {
+            font-size: 0.9rem; color: #777; line-height: 1.65; margin-bottom: 16px;
+        }
+        .service-result {
+            font-size: 0.82rem; font-weight: 600; color: #b08d28;
+            padding-top: 14px; border-top: 1px solid #181818;
+        }
+
+        /* ===== STEPS ===== */
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 60px; }
+        .step { text-align: center; padding: 40px 24px; position: relative; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #d4af37);
+            color: #050505; font-size: 1.3rem; font-weight: 900; margin-bottom: 24px;
+        }
+        .step h3 { font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+        .step p { font-size: 0.9rem; color: #777; line-height: 1.65; }
+        .step-arrow {
+            display: none; position: absolute; right: -20px; top: 50%;
+            transform: translateY(-50%); color: rgba(245,158,11,0.25); font-size: 1.3rem;
+        }
+        @media (min-width: 900px) { .step-arrow { display: block; } }
+
+        /* ===== FOR / AGAINST ===== */
+        .for-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px; }
+        .for-card { background: #0c0c0c; border-radius: 8px; padding: 36px 28px; }
+        .for-card.yes { border: 1px solid rgba(34, 197, 94, 0.15); }
+        .for-card.no { border: 1px solid rgba(239, 68, 68, 0.15); }
+        .for-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 24px; }
+        .for-card.yes h3 { color: #22c55e; }
+        .for-card.no h3 { color: #ef4444; }
+        .for-card ul { list-style: none; }
+        .for-card li {
+            font-size: 0.9rem; color: #b5b5b5; padding: 10px 0;
+            padding-left: 28px; position: relative; border-bottom: 1px solid #181818;
+        }
+        .for-card li:last-child { border-bottom: none; }
+        .for-card li::before { position: absolute; left: 0; font-weight: 700; }
+        .for-card.yes li::before { content: '\2713'; color: #22c55e; }
+        .for-card.no li::before { content: '\2717'; color: #ef4444; }
+
+        /* ===== FAQ ===== */
+        .faq-list { max-width: 720px; margin: 60px auto 0; }
+        .faq-item { border-bottom: 1px solid #181818; }
+        .faq-question {
+            width: 100%; background: none; border: none; color: #ffffff;
+            font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700;
+            text-align: left; padding: 22px 0; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+        }
+        .faq-question:hover { color: #f59e0b; }
+        .faq-icon {
+            flex-shrink: 0; width: 22px; height: 22px;
+            border: 1.5px solid rgba(245,158,11,0.4); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #b08d28; font-size: 0.85rem; font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 22px; }
+        .faq-answer p { font-size: 0.9rem; color: #777; line-height: 1.7; }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            background: linear-gradient(180deg, #0a0a0a 0%, #050505 50%, #0a0a0a 100%);
+            position: relative; overflow: hidden;
+        }
+        .final-cta::before {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(245,158,11,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .final-cta-content { position: relative; z-index: 2; text-align: center; max-width: 720px; margin: 0 auto; }
+        .final-number {
+            font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 900;
+            background: linear-gradient(135deg, #f59e0b 0%, #d4af37 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; line-height: 1.1; margin-bottom: 20px;
+        }
+        .final-cta h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900;
+            color: #ffffff; line-height: 1.15; margin-bottom: 20px;
+        }
+        .final-cta p { font-size: 1rem; color: #777; margin-bottom: 36px; line-height: 1.7; }
+        .final-cta .hero-trust { margin-top: 20px; }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: #050505;
+            border-top: 1px solid #151515;
+            padding: 60px 0 40px;
+        }
+        .footer-model {
+            max-width: 640px; margin: 0 auto 40px;
+            padding: 32px; background: #0a0a0a;
+            border: 1px solid #181818; border-radius: 8px;
+            text-align: left;
+        }
+        .footer-model-title {
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
+            text-transform: uppercase; color: #555; margin-bottom: 16px;
+        }
+        .footer-model-big {
+            font-size: 2rem; font-weight: 900; color: #f59e0b; margin-bottom: 12px;
+        }
+        .footer-model-desc {
+            font-size: 0.82rem; color: #666; line-height: 1.65; margin-bottom: 20px;
+        }
+        .footer-model-row {
+            display: flex; justify-content: space-between; align-items: baseline;
+            padding: 8px 0; border-bottom: 1px solid #141414;
+            font-size: 0.78rem;
+        }
+        .footer-model-row:last-of-type { border-bottom: none; }
+        .footer-model-label { color: #666; }
+        .footer-model-calc { color: #555; font-size: 0.7rem; }
+        .footer-model-value { color: #d4d4d4; font-weight: 700; font-variant-numeric: tabular-nums; }
+        .footer-model-total {
+            display: flex; justify-content: space-between; align-items: baseline;
+            padding: 14px 0 0; margin-top: 8px;
+            border-top: 1px solid rgba(245,158,11,0.15);
+            font-size: 0.85rem;
+        }
+        .footer-model-total .footer-model-label { color: #999; font-weight: 700; }
+        .footer-model-total .footer-model-value { color: #f59e0b; font-size: 1rem; }
+        .footer-model-note {
+            font-size: 0.7rem; color: #444; margin-top: 16px; line-height: 1.5;
+            font-style: italic;
+        }
+        .footer-cta-line {
+            text-align: center; margin-bottom: 32px;
+        }
+        .footer-cta-line a {
+            font-size: 0.85rem; font-weight: 700; color: #b08d28;
+            cursor: pointer;
+        }
+        .footer-cta-line a:hover { color: #f59e0b; }
+        .footer-bottom { text-align: center; }
+        .footer-bottom .logo { font-size: 1.1rem; margin-bottom: 10px; }
+        .footer-bottom p { font-size: 0.75rem; color: #444; }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none; position: fixed; inset: 0; z-index: 9000;
+            background: rgba(0,0,0,0.78);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            justify-content: center; align-items: center;
+            padding: 0;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal-dialog {
+            position: relative; background: #0a0a0a;
+            border: 1px solid rgba(245,158,11,0.25); border-radius: 16px;
+            box-shadow: 0 0 40px rgba(245,158,11,0.12), 0 25px 60px rgba(0,0,0,0.6);
+            width: 100%; max-width: 920px; max-height: 90vh;
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        .modal-header {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            padding: 24px 28px; background: #050505;
+            border-bottom: 1px solid rgba(245,158,11,0.15);
+            flex-shrink: 0;
+        }
+        .modal-header-left { flex: 1; }
+        .modal-eyebrow {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+            text-transform: uppercase; color: #f59e0b; margin-bottom: 6px;
+        }
+        .modal-title {
+            font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #ffffff;
+            line-height: 1.2; margin: 0;
+        }
+        .modal-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; margin-left: 16px; }
+        .modal-badge-conf {
+            font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+            text-transform: uppercase; color: rgba(245,158,11,0.5);
+        }
+        .modal-close {
+            width: 40px; height: 40px; border-radius: 8px;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            color: #a3a3a3; font-size: 20px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: color 0.15s, border-color 0.15s, background 0.15s;
+        }
+        .modal-close:hover { color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.06); }
+        .modal-body {
+            padding: 28px; overflow-y: auto; flex: 1;
+            scrollbar-width: thin; scrollbar-color: #333 transparent;
+        }
+        .modal-body::-webkit-scrollbar { width: 6px; }
+        .modal-body::-webkit-scrollbar-track { background: transparent; }
+        .modal-body::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        .modal-intro {
+            font-size: 15px; color: #a3a3a3; line-height: 1.6;
+            margin-bottom: 28px; max-width: 640px;
+        }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-col-full { grid-column: 1 / -1; }
+        .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-label {
+            font-size: 14px; font-weight: 600; color: #ffffff;
+            margin-bottom: 8px; line-height: 1.3;
+        }
+        .form-label .req { color: #f59e0b; margin-left: 2px; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; height: 52px; padding: 14px 16px;
+            background: #111111; color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.10); border-radius: 8px;
+            font-family: 'Inter', sans-serif; font-size: 16px;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            -webkit-appearance: none; appearance: none;
+        }
+        .form-textarea { height: auto; min-height: 80px; resize: vertical; }
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 16px center;
+            padding-right: 40px; cursor: pointer;
+        }
+        .form-select option { background: #111111; color: #ffffff; }
+        .form-input::placeholder, .form-textarea::placeholder { color: #7a7a7a; }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: #f59e0b;
+            box-shadow: 0 0 0 3px rgba(245,158,11,0.18);
+        }
+        .form-input.invalid, .form-select.invalid { border-color: #ef4444; }
+        @media (prefers-reduced-motion: no-preference) {
+            .form-input.invalid, .form-select.invalid { animation: fieldPulse 0.35s ease; }
+        }
+        @keyframes fieldPulse {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+        }
+        .form-hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+        .form-error-region {
+            display: none; background: rgba(239,68,68,0.08);
+            border: 1px solid rgba(239,68,68,0.25); border-radius: 8px;
+            padding: 14px 18px; margin-bottom: 20px;
+            color: #fca5a5; font-size: 14px; font-weight: 600;
+        }
+        .form-error-region.show { display: block; }
+        .form-submit-bar { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .btn-submit {
+            width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d4af37 100%);
+            color: #050505; font-weight: 800; font-size: 16px;
+            padding: 18px 28px; border-radius: 8px; border: none; cursor: pointer;
+            letter-spacing: 0.02em; text-transform: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 0 20px rgba(245,158,11,0.15);
+        }
+        .btn-submit:hover:not(:disabled) { transform: scale(1.02); box-shadow: 0 0 30px rgba(245,158,11,0.3); }
+        .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .btn-submit svg { flex-shrink: 0; }
+        .form-helper { text-align: center; font-size: 13px; color: #737373; margin-top: 14px; line-height: 1.5; }
+        .form-helper-sm { font-size: 12px; color: #525252; margin-top: 6px; }
+        .body-modal-open { overflow: hidden; }
+
+        /* ===== ANIMATIONS ===== */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        @supports ((animation-timeline: view()) and (animation-range: entry)) {
+            @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+            .reveal { opacity: 0; transform: translateY(24px); animation: fadeInUp auto ease both; animation-timeline: view(); animation-range: entry 0% entry 30%; transition: none; }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .math-grid, .services-grid, .for-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-row-3 { grid-template-columns: 1fr; }
+            .leak-item { grid-template-columns: 48px 1fr; gap: 16px; }
+            .leak-num { font-size: 2rem; }
+            .systems-intro { flex-wrap: wrap; gap: 8px; }
+            .sys-arrow { display: none; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 72px 0; }
+            .hero { padding: 120px 0 72px; }
+            .btn-cta-lg { font-size: 0.95rem; padding: 18px 40px; }
+            .btn-cta-xl { font-size: 1rem; padding: 20px 44px; }
+            .math-total { padding: 32px 20px; }
+            .step-arrow { display: none !important; }
+            .pipe { padding: 12px 14px; gap: 3px; }
+            .pn { padding: 5px 10px; font-size: 0.68rem; }
+            .modal-overlay { align-items: flex-end; }
+            .modal-dialog { max-width: 100%; max-height: 100vh; border-radius: 16px 16px 0 0; height: 100%; }
+            .modal-header { padding: 18px 20px; }
+            .modal-body { padding: 20px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.65rem; }
+            .math-big-number { font-size: 2rem; }
+            .math-total-number { font-size: 2.2rem; }
+            .modal-title { font-size: 20px; }
+            .leak-item { grid-template-columns: 1fr; }
+            .leak-num { font-size: 1.6rem; margin-bottom: -4px; }
+        }
+    </style>
+</head>
+<body>
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="site-header">
+    <div class="header-inner">
+        <div class="logo">SETU<span>.</span>SYSTEMS</div>
+        <button type="button" class="btn-cta" onclick="openApplyModal()">APPLY NOW</button>
+    </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+    <div class="hero-bg" role="img" aria-label="Contractor working on a home project"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="hero-badge">For Home Service Owners Doing $500K+/Year</div>
+        <h1>You're Losing <span class="gold">$30K&ndash;$80K</span> Every Year From Missed Calls, Weak Reviews, and a Website That Doesn't Convert.</h1>
+        <p class="hero-sub">We install 4 systems that plug the leaks in your business &mdash; so you stop giving money away to the guy down the street and start keeping what you earned.</p>
+        <p class="hero-math">Miss <strong>8 calls a week</strong> at a <strong>$600 average job</strong>. Even if only <strong>45% are qualified</strong> and you'd close <strong>30%</strong> of those &mdash; that's <strong>$33,700/year</strong> from just one leak.</p>
+        <button type="button" class="btn-cta btn-cta-lg" onclick="openApplyModal()">APPLY NOW</button>
+        <p class="hero-trust">For established home service owners only &mdash; <span>plumbing &middot; HVAC &middot; roofing &middot; electrical &middot; remodeling</span></p>
+    </div>
+</section>
+
+<!-- ========== THE 4 LEAKS ========== -->
+<section class="section-card" id="leaks">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">The Problem</span>
+            <h2 class="section-title">The 4 Leaks That Are Quietly<br>Killing Your Profits</h2>
+            <hr class="gold-rule center">
+            <p class="section-subtitle center">You didn't build a business this far to watch money walk out the back door every single day. But that's exactly what's happening.</p>
+        </div>
+        <div class="leaks-list">
+            <!-- LEAK 01 -->
+            <div class="leak-item reveal">
+                <div class="leak-num">01</div>
+                <div class="leak-content">
+                    <h3>Missed Calls = Lost Jobs</h3>
+                    <div class="pipe">
+                        <span class="pn pn-ok">Customer Calls</span>
+                        <span class="pa">&rarr;</span>
+                        <span class="pn pn-ok">Phone Rings</span>
+                        <span class="px">&times;</span>
+                        <span class="pn pn-fail">No Answer</span>
+                        <span class="pa pa-fail">&rarr;</span>
+                        <span class="pn pn-fail">Calls Competitor</span>
+                    </div>
+                    <p>You're missing 22&ndash;30% of your inbound calls. Every single one of those callers picks up the phone and dials the next guy on Google. They don't leave voicemails. They don't wait. They're gone.</p>
+                    <span class="leak-stat">~$249,600/yr in gross missed-call opportunity</span>
+                    <span class="leak-stat-note">Based on 8 missed calls/week &times; $600 avg job &times; 52 weeks</span>
+                </div>
+            </div>
+            <!-- LEAK 02 -->
+            <div class="leak-item reveal">
+                <div class="leak-num">02</div>
+                <div class="leak-content">
+                    <h3>Your Website Doesn't Book Jobs</h3>
+                    <div class="pipe">
+                        <span class="pn pn-ok">Visitor Lands</span>
+                        <span class="pa">&rarr;</span>
+                        <span class="pn pn-ok">Reads Page</span>
+                        <span class="px">&times;</span>
+                        <span class="pn pn-fail">No Clear CTA</span>
+                        <span class="pa pa-fail">&rarr;</span>
+                        <span class="pn pn-fail">Leaves Without Calling</span>
+                    </div>
+                    <p>Most contractor websites convert at 2&ndash;2.5%. That means for every 100 visitors, 97 leave without contacting you. A properly built conversion-focused site converts at 5&ndash;8%+. You're paying for traffic that doesn't convert.</p>
+                    <span class="leak-stat">~$72,000/yr in untapped lead value</span>
+                    <span class="leak-stat-note">Based on 10 additional leads/month &times; $600 avg job &times; 12 months</span>
+                </div>
+            </div>
+            <!-- LEAK 03 -->
+            <div class="leak-item reveal">
+                <div class="leak-num">03</div>
+                <div class="leak-content">
+                    <h3>Weak Reviews Are Costing You Silently</h3>
+                    <div class="pipe-dual">
+                        <span class="pipe-dual-label good">What should happen &darr;</span>
+                        <div class="pipe">
+                            <span class="pn pn-ok">Job Done</span>
+                            <span class="pa">&rarr;</span>
+                            <span class="pn pn-ok">Review Request</span>
+                            <span class="pa">&rarr;</span>
+                            <span class="pn pn-result">5&star; on Google</span>
+                        </div>
+                        <span class="pipe-dual-label bad">What actually happens &darr;</span>
+                        <div class="pipe">
+                            <span class="pn pn-ok">Job Done</span>
+                            <span class="px">&times;</span>
+                            <span class="pn pn-fail">No Ask</span>
+                            <span class="pa pa-fail">&rarr;</span>
+                            <span class="pn pn-fail">Competitor Has More Stars</span>
+                        </div>
+                    </div>
+                    <p>Your happy customers aren't posting reviews because nobody's asking them. Meanwhile, the one unhappy customer posts &mdash; and it sits on page one of Google, quietly steering jobs to your competitors for months.</p>
+                    <span class="leak-stat">~$25,000/yr estimated reputation tax</span>
+                    <span class="leak-stat-note">Estimated &mdash; varies by market, review volume, and competitor profile</span>
+                </div>
+            </div>
+            <!-- LEAK 04 -->
+            <div class="leak-item reveal">
+                <div class="leak-num">04</div>
+                <div class="leak-content">
+                    <h3>Dead Quotes Are Buried Revenue</h3>
+                    <div class="pipe">
+                        <span class="pn pn-ok">Quote Sent</span>
+                        <span class="pa">&rarr;</span>
+                        <span class="pn pn-ok">Customer Thinks</span>
+                        <span class="px">&times;</span>
+                        <span class="pn pn-fail">No Follow-Up</span>
+                        <span class="pa pa-fail">&rarr;</span>
+                        <span class="pn pn-fail">Quote Dies</span>
+                    </div>
+                    <p>You drove out, measured, priced it. Then&hellip; nothing. 60&ndash;70% of quotes never get a single follow-up. These are people who already wanted the work done. Most just need a nudge.</p>
+                    <span class="leak-stat">~$57,600/yr in quoted work going cold</span>
+                    <span class="leak-stat-note">Based on 8 abandoned quotes/month &times; $600 avg job &times; 12 months</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== THE BRUTAL MATH ========== -->
+<section class="math-section" id="math">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">The Brutal Math</span>
+            <h2 class="section-title">This Is What's Walking Out of<br>Your Business. Every. Single. Year.</h2>
+            <hr class="gold-rule center">
+            <p class="section-subtitle center">Run the math yourself. These are illustrative calculations using conservative assumptions. Your actual numbers depend on your call volume, traffic, close rates, and ticket size.</p>
+        </div>
+        <div class="math-grid">
+            <!-- MATH CARD 1: Missed Calls -->
+            <!-- VERIFY: 8 × $600 × 52 = $249,600 ✓ -->
+            <div class="math-card reveal">
+                <div class="math-card-label">Leak #1 &mdash; Missed Calls</div>
+                <h3>8 missed calls per week at a $600 average job, over a full year:</h3>
+                <div class="math-big-number">$249,600</div>
+                <div class="math-sub">gross missed-call opportunity per year</div>
+                <div class="math-calc"><strong>8 missed calls</strong> &times; <strong>$600</strong> = $4,800/week<br>$4,800 &times; <strong>52 weeks</strong> = <strong>$249,600/year</strong></div>
+                <span class="math-model-tag">Illustrative revenue model</span>
+            </div>
+            <!-- MATH CARD 2: Website -->
+            <!-- VERIFY: 10 × $600 × 12 = $72,000 ✓ -->
+            <div class="math-card reveal">
+                <div class="math-card-label">Leak #2 &mdash; Website Conversion</div>
+                <h3>Improving from 2% to 3% on 1,000 monthly visitors = 10 extra leads/month:</h3>
+                <div class="math-big-number">$72,000</div>
+                <div class="math-sub">in untapped lead value per year</div>
+                <div class="math-calc"><strong>1,000 visitors &times; 2%</strong> = 20 leads &rarr; <strong>&times; 3%</strong> = 30 leads<br><strong>10 extra leads</strong> &times; <strong>$600</strong> &times; 12 mo = <strong>$72,000/yr</strong></div>
+                <span class="math-model-tag">Example using conservative assumptions</span>
+            </div>
+            <!-- MATH CARD 3: Reviews -->
+            <div class="math-card reveal">
+                <div class="math-card-label">Leak #3 &mdash; Reputation Damage</div>
+                <h3>Unmanaged reviews quietly reduce your inbound call and click-through rates:</h3>
+                <div class="math-big-number">~$25,000</div>
+                <div class="math-sub">estimated annual reputation tax</div>
+                <div class="math-calc">Lower star rating = fewer clicks from Google results.<br>Fewer clicks = fewer calls = fewer jobs.<br>Compounds over months as competitors gain review velocity.</div>
+                <span class="math-model-tag">Estimated &mdash; varies by market</span>
+            </div>
+            <!-- MATH CARD 4: Dead Quotes -->
+            <!-- VERIFY: 8 × $600 × 12 = $57,600 ✓ -->
+            <div class="math-card reveal">
+                <div class="math-card-label">Leak #4 &mdash; Abandoned Quotes</div>
+                <h3>If 8 quotes per month go cold with zero follow-up at a $600 avg job:</h3>
+                <div class="math-big-number">$57,600</div>
+                <div class="math-sub">in quoted work going cold per year</div>
+                <div class="math-calc"><strong>12 quotes/mo &times; 65% abandoned</strong> &asymp; 8 dead quotes<br><strong>8 &times; $600</strong> &times; 12 mo = <strong>$57,600/yr</strong></div>
+                <span class="math-model-tag">Illustrative revenue model</span>
+            </div>
+        </div>
+        <!-- TOTAL: $249,600 + $72,000 + $25,000 + $57,600 = $404,200 → $300K–$400K+ -->
+        <div class="math-total reveal">
+            <div class="math-total-label">Your Modeled Annual Revenue Opportunity</div>
+            <div class="math-total-number">$300,000&ndash;$400,000+</div>
+            <p>Illustrative range based on the leak assumptions above. Your actual number depends on call volume, traffic, close rate, ticket size, quote volume, and follow-up performance.</p>
+        </div>
+        <div class="text-center reveal" style="margin-top: 48px;">
+            <button type="button" class="btn-cta btn-cta-lg" onclick="openApplyModal()">LET'S CALCULATE YOUR NUMBER &mdash; APPLY NOW</button>
+        </div>
+    </div>
+</section>
+
+<!-- ========== 4 SYSTEMS / SOLUTION ========== -->
+<section class="section-card" id="solution">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">The Solution</span>
+            <h2 class="section-title">4 Systems. 4 Revenue Leaks Plugged.<br>More Money In Your Account.</h2>
+            <hr class="gold-rule center">
+            <p class="section-subtitle center">We don't do "digital marketing." We install revenue-protection systems that run 24/7 so you capture every dollar you're currently giving away.</p>
+        </div>
+        <!-- System pipeline overview -->
+        <div class="systems-intro reveal">
+            <span class="sys-step-label"><span>01</span> Capture</span>
+            <span class="sys-arrow">&rarr;</span>
+            <span class="sys-step-label"><span>02</span> Respond</span>
+            <span class="sys-arrow">&rarr;</span>
+            <span class="sys-step-label"><span>03</span> Reputation</span>
+            <span class="sys-arrow">&rarr;</span>
+            <span class="sys-step-label"><span>04</span> Reactivate</span>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-num">System 01 &mdash; Capture</div>
+                <h3>A Website That Actually Books Jobs</h3>
+                <div class="pipe">
+                    <span class="pn pn-ok">Traffic In</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-ok">Optimized Page</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-ok">Clear CTA</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-result">Job Booked</span>
+                </div>
+                <p>Not a pretty brochure. A conversion machine built on data &mdash; designed to turn visitors into booked appointments. We take your conversion rate from the typical 2% to 5&ndash;8%+. That's 3&ndash;4x more leads from the same traffic.</p>
+                <div class="service-result">&rarr; Same traffic, 3&ndash;4&times; more booked jobs</div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">System 02 &mdash; Respond</div>
+                <h3>Missed Call Text-Back</h3>
+                <div class="pipe">
+                    <span class="pn pn-ok">Call Missed</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-ok">Instant Text</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-ok">Customer Replies</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-result">Job Saved</span>
+                </div>
+                <p>You miss a call. Within seconds, the customer gets a text: "Hey, we saw you called &mdash; how can we help?" They respond. You respond. Job saved. Before they call the next guy.</p>
+                <div class="service-result">&rarr; Recover missed calls before they reach your competitor</div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">System 03 &mdash; Reputation</div>
+                <h3>Review Automation &amp; Protection</h3>
+                <div class="pipe">
+                    <span class="pn pn-ok">Job Done</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-ok">Review Request</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-result">4&ndash;5&star; &rarr; Google</span>
+                </div>
+                <p>Happy customer? They get prompted to leave a review &mdash; and 4&ndash;5 star reviews auto-post to Google and Facebook. Unhappy? Their feedback goes to a private channel where you fix the problem before it goes public.</p>
+                <div class="service-result">&rarr; Build a 5-star wall while catching problems privately</div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-num">System 04 &mdash; Reactivate</div>
+                <h3>Lead Reactivation &amp; Quote Follow-Up</h3>
+                <div class="pipe">
+                    <span class="pn pn-ok">Old Lead</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-ok">Auto Follow-Up</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-ok">Re-engaged</span>
+                    <span class="pa">&rarr;</span>
+                    <span class="pn pn-result">Appointment</span>
+                </div>
+                <p>All those quotes sitting in your CRM collecting dust? Automated follow-up sequences re-engage old leads and nudge pending quotes. These people already wanted the work done. Most just need a push.</p>
+                <div class="service-result">&rarr; Turn stale quotes into recovered revenue</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="section-dark" id="how-it-works">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">How It Works</span>
+            <h2 class="section-title">3 Steps. Zero Headaches.<br>You Don't Need to Be "Tech-Savvy."</h2>
+            <hr class="gold-rule center">
+            <p class="section-subtitle center">We do the heavy lifting. You do what you're good at &mdash; running jobs and making money.</p>
+        </div>
+        <div class="steps">
+            <div class="step reveal">
+                <div class="step-number">1</div>
+                <h3>We Audit Your Leaks</h3>
+                <p>We look at your calls, your website, your reviews, your follow-up process. We find exactly where the money is falling through the cracks &mdash; and we put real dollar numbers on each leak.</p>
+                <span class="step-arrow">&rarr;</span>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">2</div>
+                <h3>We Install The 4 Systems</h3>
+                <p>New high-converting website. Missed call text-back. Review automation. Lead reactivation. All built and launched for you. You don't have to learn anything or figure anything out.</p>
+                <span class="step-arrow">&rarr;</span>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">3</div>
+                <h3>You Start Keeping More Money</h3>
+                <p>The systems run 24/7. You capture more calls, book more jobs, protect your reputation, and close more quotes. You focus on running your business &mdash; the systems handle the rest.</p>
+            </div>
+        </div>
+        <div class="text-center reveal" style="margin-top: 56px;">
+            <button type="button" class="btn-cta btn-cta-lg" onclick="openApplyModal()">APPLY NOW</button>
+        </div>
+    </div>
+</section>
+
+<!-- ========== WHO IT'S FOR ========== -->
+<section class="section-card" id="who">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">Is This You?</span>
+            <h2 class="section-title">This Is For a Very Specific<br>Type of Business Owner</h2>
+            <hr class="gold-rule center">
+        </div>
+        <div class="for-grid">
+            <div class="for-card yes reveal">
+                <h3>This Is For You If...</h3>
+                <ul>
+                    <li>You run a home service business doing $500K&ndash;$5M+/year</li>
+                    <li>You've been in business 8+ years and you're not going anywhere</li>
+                    <li>You know you're leaving money on the table &mdash; you just don't know how much</li>
+                    <li>You're tired of working this hard for what you actually keep</li>
+                    <li>You want systems that run without you babysitting them</li>
+                    <li>You're ready to invest in your business, not gamble on another "marketing guy"</li>
+                </ul>
+            </div>
+            <div class="for-card no reveal">
+                <h3>This Is NOT For You If...</h3>
+                <ul>
+                    <li>You're a startup with no revenue and no track record</li>
+                    <li>You want "likes" and "followers" instead of booked jobs</li>
+                    <li>You're looking for the cheapest option (we're not it)</li>
+                    <li>You're not willing to invest in systems that pay for themselves</li>
+                    <li>You think your $300 GoDaddy website is "working fine"</li>
+                    <li>You want to manage everything yourself and micromanage the process</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section-dark" id="faq">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">Frequently Asked Questions</span>
+            <h2 class="section-title">Got Questions? Good.<br>That Means You're Paying Attention.</h2>
+            <hr class="gold-rule center">
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <button class="faq-question" aria-expanded="false" type="button">
+                    <span>How much does this cost?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We'll give you exact pricing on the call. But here's the real question: can you afford to keep leaving $30K&ndash;$80K a year on the table doing nothing? Our clients typically see a strong return on what they invest with us. This isn't a cost &mdash; it's the most profitable investment you'll make this year. We're not the cheapest, and we're not trying to be. We're the ones that actually work.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" aria-expanded="false" type="button">
+                    <span>How long until I see results?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>The missed call text-back and review automation start working the day we turn them on. Your website goes live within 2&ndash;3 weeks. Lead reactivation campaigns can start generating recovered revenue within the first 7 days. This isn't SEO where you wait 6 months and pray. These systems produce results fast because they're capturing money you're already losing right now.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" aria-expanded="false" type="button">
+                    <span>I've been burned by marketing companies before. How are you different?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We don't do "marketing." We don't run your Facebook ads. We don't post on your Instagram. We install revenue-protection systems that plug the holes in your existing operation. The money you're losing is already coming to your door &mdash; you're just not capturing it. Every "marketing" company wants to drive more traffic. We make sure you actually keep the traffic and leads you already have. Totally different game.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" aria-expanded="false" type="button">
+                    <span>I'm not good with computers. Do I need to learn new software?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>No. Zero. We build it, we install it, we manage it. If you can read a text message on your phone, you can use these systems. Most of our clients are guys who've been swinging hammers and turning wrenches for 20+ years. They're not "tech guys." They don't need to be. The whole point is that these systems run without you.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" aria-expanded="false" type="button">
+                    <span>I don't have time to deal with another project right now.</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>That's exactly the problem. You're so busy working IN the business that you don't have time to fix the systems that are costing you tens of thousands. We need about 45 minutes of your time for the initial call and onboarding. After that, we do the work. You keep running your business. That's the deal.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" aria-expanded="false" type="button">
+                    <span>Do you work with businesses in my trade?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We work with plumbing, HVAC, roofing, electrical, landscaping, and remodeling companies. If you're a home service business doing $500K+ a year and you rely on inbound calls and local reputation to get jobs, our systems will work for you. Same leaks, same math, same fix.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final-cta" id="final-cta">
+    <div class="container">
+        <div class="final-cta-content reveal">
+            <span class="section-label">Stop Leaving Money On The Table</span>
+            <div class="final-number">$300,000&ndash;$400,000+</div>
+            <h2>That's the Revenue Opportunity<br>Hiding Inside the Leaks.</h2>
+            <p>This is for owners who are tired of working this hard for what they keep. You built something real. Now let's make sure you actually capture what it's worth. 45 minutes on a call. No pressure. No pitch deck. Just the math on your specific business.</p>
+            <button type="button" class="btn-cta btn-cta-xl" onclick="openApplyModal()">APPLY NOW</button>
+            <p class="hero-trust">Limited availability &mdash; we only take on <span>12 new clients per quarter</span></p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+    <div class="container">
+        <!-- Conservative Revenue Model -->
+        <div class="footer-model">
+            <div class="footer-model-title">Conservative Revenue Model</div>
+            <div class="footer-model-big">~$80,000/year</div>
+            <div class="footer-model-desc">Even after adjusting for lead qualification and close rates, a conservative model uncovers ~$80K/year in potentially recoverable revenue.</div>
+            <!-- VERIFY: 8 × 600 × 0.45 × 0.30 × 52 = 33,696 ✓ -->
+            <div class="footer-model-row">
+                <span class="footer-model-label">Missed Calls</span>
+                <span class="footer-model-value">$33,696</span>
+            </div>
+            <div class="footer-model-row">
+                <span class="footer-model-calc">8/wk &times; $600 &times; 45% qualified &times; 30% close &times; 52 wks</span>
+            </div>
+            <!-- VERIFY: 10 × 0.30 × 600 × 12 = 21,600 ✓ -->
+            <div class="footer-model-row">
+                <span class="footer-model-label">Website Improvement</span>
+                <span class="footer-model-value">$21,600</span>
+            </div>
+            <div class="footer-model-row">
+                <span class="footer-model-calc">10 extra leads/mo &times; 30% close &times; $600 &times; 12 mo</span>
+            </div>
+            <div class="footer-model-row">
+                <span class="footer-model-label">Reputation Recovery</span>
+                <span class="footer-model-value">~$10,000</span>
+            </div>
+            <div class="footer-model-row">
+                <span class="footer-model-calc">Estimated &mdash; improved click-through from higher star rating</span>
+            </div>
+            <!-- VERIFY: 8 × 0.25 × 600 × 12 = 14,400 ✓ -->
+            <div class="footer-model-row">
+                <span class="footer-model-label">Quote Follow-Up</span>
+                <span class="footer-model-value">$14,400</span>
+            </div>
+            <div class="footer-model-row">
+                <span class="footer-model-calc">8 dead quotes/mo &times; 25% recovery &times; $600 &times; 12 mo</span>
+            </div>
+            <!-- VERIFY: 33,696 + 21,600 + 10,000 + 14,400 = 79,696 ✓ -->
+            <div class="footer-model-total">
+                <span class="footer-model-label">Total Recoverable</span>
+                <span class="footer-model-value">~$79,696/yr</span>
+            </div>
+            <div class="footer-model-note">Illustrative model using conservative assumptions. Your actual recoverable revenue depends on your specific call volume, traffic, ticket size, and close rates.</div>
+        </div>
+        <div class="footer-cta-line">
+            <a onclick="openApplyModal()" role="button" tabindex="0">Let's calculate your actual number &rarr;</a>
+        </div>
+        <div class="footer-bottom">
+            <div class="logo">SETU<span>.</span>SYSTEMS</div>
+            <p>&copy; 2026 Setu Systems. All rights reserved. | Revenue protection for home service businesses.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== APPLY MODAL ========== -->
+<div class="modal-overlay" id="apply-overlay" role="dialog" aria-modal="true" aria-labelledby="apply-title">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <div class="modal-header-left">
+                <div class="modal-eyebrow">Contractor Revenue Audit Specification</div>
+                <h2 class="modal-title" id="apply-title">Business Operational Profile</h2>
+            </div>
+            <div class="modal-header-right">
+                <span class="modal-badge-conf">CONFIDENTIAL</span>
+                <button type="button" class="modal-close" aria-label="Close" onclick="closeApplyModal()">&times;</button>
+            </div>
+        </div>
+        <div class="modal-body">
+            <p class="modal-intro">60 seconds. Then you pick a time. This is how we walk into the call already knowing where you're leaking.</p>
+
+            <form id="setu-apply-form" novalidate>
+                <div class="form-grid">
+                    <!-- Row 1: Name + Business -->
+                    <div class="form-group">
+                        <label class="form-label" for="af-name">Your Name <span class="req">*</span></label>
+                        <input class="form-input" type="text" id="af-name" name="name" placeholder="e.g. John Miller" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="af-biz">Business Name <span class="req">*</span></label>
+                        <input class="form-input" type="text" id="af-biz" name="business_name" placeholder="e.g. Apex Mechanical HVAC" required>
+                    </div>
+
+                    <!-- Row 2: Phone + Email -->
+                    <div class="form-group">
+                        <label class="form-label" for="af-phone">Phone <span class="req">*</span></label>
+                        <input class="form-input" type="tel" id="af-phone" name="phone" placeholder="e.g. (555) 555-1234" autocomplete="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="af-email">Email <span class="req">*</span></label>
+                        <input class="form-input" type="email" id="af-email" name="email" placeholder="e.g. john@apexmechanical.com" autocomplete="email" required>
+                    </div>
+
+                    <!-- Row 3: Website + Business Type -->
+                    <div class="form-group">
+                        <label class="form-label" for="af-web">Website URL</label>
+                        <input class="form-input" type="url" id="af-web" name="website" placeholder="e.g. apexmechanical.com" autocomplete="url">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="af-type">Business Type <span class="req">*</span></label>
+                        <select class="form-select" id="af-type" name="business_type" required>
+                            <option value="" disabled selected>Select trade</option>
+                            <option>HVAC</option>
+                            <option>Plumbing</option>
+                            <option>Electrical</option>
+                            <option>Roofing</option>
+                            <option>Pest Control</option>
+                            <option>Tree Service</option>
+                            <option>Landscaping</option>
+                            <option>Garage Doors</option>
+                            <option>Restoration</option>
+                            <option>Painting</option>
+                            <option>Flooring</option>
+                            <option>Windows &amp; Doors</option>
+                            <option>Solar</option>
+                            <option>Other Home Service</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 4: Monthly Leads + Avg Job + Employees (3-col) -->
+                <div class="form-row-3" style="margin-top: 20px;">
+                    <div class="form-group">
+                        <label class="form-label" for="af-leads">Monthly Leads</label>
+                        <select class="form-select" id="af-leads" name="monthly_leads">
+                            <option value="">Select</option>
+                            <option>&lt; 30 leads/mo</option>
+                            <option>30 - 75 leads/mo</option>
+                            <option>75 - 150 leads/mo</option>
+                            <option>150 - 300 leads/mo</option>
+                            <option>300+ leads/mo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="af-jobval">Average Job Value</label>
+                        <select class="form-select" id="af-jobval" name="average_job_value">
+                            <option value="">Select</option>
+                            <option>$350 - $750</option>
+                            <option>$750 - $1,500</option>
+                            <option>$1,500 - $3,500</option>
+                            <option>$3,500 - $8,000</option>
+                            <option>$8,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="af-emp">Employees</label>
+                        <select class="form-select" id="af-emp" name="employees">
+                            <option value="">Select</option>
+                            <option>1 - 3 employees</option>
+                            <option>4 - 10 employees</option>
+                            <option>11 - 25 employees</option>
+                            <option>25+ employees</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 5: Biggest Frustration -->
+                <div class="form-group" style="margin-top: 20px;">
+                    <label class="form-label" for="af-frust">Biggest Operational Frustration</label>
+                    <select class="form-select" id="af-frust" name="biggest_frustration">
+                        <option value="">Select the biggest leak</option>
+                        <option>Missed calls while in the field / jobsite</option>
+                        <option>Slow speed-to-lead on online inquiries</option>
+                        <option>High-ticket quotes that go dark without follow-up</option>
+                        <option>Google reviews velocity lagging behind competitors</option>
+                        <option>Dormant past customers who never get contacted again</option>
+                    </select>
+                </div>
+
+                <!-- Row 6: What to fix -->
+                <div class="form-group" style="margin-top: 20px;">
+                    <label class="form-label" for="af-fix">What would you most like to fix?</label>
+                    <textarea class="form-input form-textarea" id="af-fix" name="what_to_fix" rows="3" maxlength="800" placeholder="Describe where you suspect revenue is leaking or what part of your process feels most manual..."></textarea>
+                </div>
+
+                <!-- Hidden -->
+                <input type="hidden" name="_source" value="setu-systems-landing">
+                <input type="hidden" name="_page" value="apply-now">
+                <!-- honeypot -->
+                <div class="form-hp" aria-hidden="true">
+                    <label>Company website</label>
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+
+                <!-- Submit -->
+                <div class="form-submit-bar">
+                    <div class="form-error-region" id="form-errors" aria-live="polite">Fill the required fields so we know who you are. Then we take you to the calendar.</div>
+                    <button type="submit" class="btn-submit" id="btn-submit">
+                        <span id="btn-submit-text">Save Information &amp; Proceed to Calendar</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+                    </button>
+                    <p class="form-helper">Your details will be used directly to tailor the operational roadmap during your call.</p>
+                    <p class="form-helper form-helper-sm">After you save, you'll pick a time on the calendar.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Forminit SDK (2 KB, handles submission + validation + tracking) -->
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
+<script>
+/* ===== EXISTING SITE JS (preserved) ===== */
+(function(){
+    var header = document.getElementById('site-header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 80) { header.classList.add('scrolled'); }
+        else { header.classList.remove('scrolled'); }
+    }, { passive: true });
+})();
+(function(){
+    if (typeof CSS !== 'undefined' && CSS.supports && CSS.supports('(animation-timeline: view()) and (animation-range: entry 0% entry 30%)')) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; el.classList.add('visible');
+        });
+        return;
+    }
+    var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+})();
+(function(){
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = btn.closest('.faq-item');
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function(o) {
+                o.classList.remove('open'); o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+            });
+            if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+        });
+    });
+})();
+
+/* ===== APPLY MODAL JS ===== */
+/*
+ * ROOT CAUSE of Forminit failure:
+ * Forminit requires ALL field names to use the fi-{type}-{name} prefix.
+ * e.g. fi-sender-fullName, fi-text-businessName, fi-select-businessType
+ * Our form used bare names (name, email, phone, etc.) so Forminit
+ * silently discarded every submission as empty.
+ *
+ * FIX: Use the official Forminit JS SDK (forminit.submit()) with a
+ * FormData object that has properly fi-prefixed field names. Await
+ * the SDK response, THEN redirect to Calendly.
+ *
+ * CALENDLY: https://calendly.com/setusystems-audit/30min
+ * FORMINIT: https://forminit.com/f/ig8f5k8ucam
+ */
+(function(){
+    "use strict";
+    var FORMINIT_ID  = "ig8f5k8ucam";
+    var CALENDLY_URL = "https://calendly.com/setusystems-audit/30min";
+
+    var overlay = document.getElementById('apply-overlay');
+    var form = document.getElementById('setu-apply-form');
+    var btnSubmit = document.getElementById('btn-submit');
+    var btnText = document.getElementById('btn-submit-text');
+    var errorRegion = document.getElementById('form-errors');
+    var openerEl = null;
+    var submitting = false;
+
+    /* Focus trap */
+    function getFocusable() {
+        return overlay.querySelectorAll('input:not([tabindex="-1"]):not([type="hidden"]), select, textarea, button, [tabindex]:not([tabindex="-1"])');
+    }
+    function trapFocus(e) {
+        if (e.key !== 'Tab') return;
+        var focusable = getFocusable();
+        if (!focusable.length) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+    }
+
+    /* Open */
+    window.openApplyModal = function() {
+        openerEl = document.activeElement;
+        overlay.classList.add('open');
+        document.body.classList.add('body-modal-open');
+        errorRegion.classList.remove('show');
+        form.querySelectorAll('.invalid').forEach(function(el) { el.classList.remove('invalid'); });
+        setTimeout(function() {
+            var first = document.getElementById('af-name');
+            if (first) first.focus();
+        }, 60);
+        document.addEventListener('keydown', handleModalKeys);
+        overlay.addEventListener('keydown', trapFocus);
+    };
+
+    /* Close */
+    window.closeApplyModal = function() {
+        overlay.classList.remove('open');
+        document.body.classList.remove('body-modal-open');
+        document.removeEventListener('keydown', handleModalKeys);
+        overlay.removeEventListener('keydown', trapFocus);
+        if (openerEl && openerEl.focus) { try { openerEl.focus(); } catch(e){} }
+        openerEl = null;
+    };
+
+    /* ESC key */
+    function handleModalKeys(e) {
+        if (e.key === 'Escape') { closeApplyModal(); }
+    }
+
+    /* Backdrop click */
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeApplyModal();
+    });
+
+    /* Validation helpers */
+    function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+    function isValidPhone(v) { return v.replace(/\D/g, '').length >= 10; }
+
+    /* Build Calendly URL with prefill */
+    function buildCalendlyUrl(name, email, biz) {
+        var url = CALENDLY_URL;
+        var params = [];
+        if (name) params.push('name=' + encodeURIComponent(name));
+        if (email) params.push('email=' + encodeURIComponent(email));
+        if (biz) params.push('a1=' + encodeURIComponent(biz));
+        if (params.length) url += '?' + params.join('&');
+        return url;
+    }
+
+    /* Submit */
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (submitting) return;
+
+        /* 1. Honeypot — bots go straight to Calendly, no POST */
+        var gotcha = form.querySelector('[name="_gotcha"]');
+        if (gotcha && gotcha.value.length > 0) {
+            window.location.href = buildCalendlyUrl('', '', '');
+            return;
+        }
+
+        /* 2. Validate required fields: name, business_name, phone, email, business_type */
+        var nameEl = form.querySelector('[name="name"]');
+        var bizEl = form.querySelector('[name="business_name"]');
+        var phoneEl = form.querySelector('[name="phone"]');
+        var emailEl = form.querySelector('[name="email"]');
+        var typeEl = form.querySelector('[name="business_type"]');
+
+        var requiredFields = [nameEl, bizEl, phoneEl, emailEl, typeEl];
+        var allValid = true;
+
+        form.querySelectorAll('.invalid').forEach(function(el) { el.classList.remove('invalid'); });
+        errorRegion.classList.remove('show');
+
+        requiredFields.forEach(function(f) {
+            var val = f.value.trim();
+            var bad = false;
+            if (!val) bad = true;
+            else if (f === phoneEl && !isValidPhone(val)) bad = true;
+            else if (f === emailEl && !isValidEmail(val)) bad = true;
+            if (bad) { f.classList.add('invalid'); allValid = false; }
+        });
+
+        if (!allValid) {
+            errorRegion.classList.add('show');
+            var firstBad = form.querySelector('.invalid');
+            if (firstBad) firstBad.focus();
+            return;
+        }
+
+        /* 3. Valid — disable button, show Saving… */
+        submitting = true;
+        btnSubmit.disabled = true;
+        btnText.textContent = 'Saving\u2026';
+
+        var nameVal  = nameEl.value.trim();
+        var emailVal = emailEl.value.trim();
+        var bizVal   = bizEl.value.trim();
+        var phoneVal = phoneEl.value.trim();
+        var calendlyUrl = buildCalendlyUrl(nameVal, emailVal, bizVal);
+
+        /*
+         * 4. Build Forminit-compatible FormData with fi- prefixed names.
+         *    Forminit requires: fi-sender-{prop} for contact info,
+         *    fi-text-{name} for text, fi-select-{name} for dropdowns.
+         *    Without these prefixes, submissions arrive EMPTY.
+         *
+         *    CRITICAL: fi-sender-phone MUST be E.164 format (+15551234567)
+         *    per Forminit docs. Raw formats like (555) 555-1234 are REJECTED.
+         *    fi-url-{name} is the correct type for URL fields (not fi-text-).
+         */
+        var fd = new FormData();
+
+        /* Convert phone to E.164 format.
+         * Strip all non-digits, prepend +1 for US numbers.
+         * Forminit rejects non-E.164 phone values. */
+        var phoneDigits = phoneVal.replace(/\D/g, '');
+        var phoneE164;
+        if (phoneDigits.charAt(0) === '1' && phoneDigits.length === 11) {
+            phoneE164 = '+' + phoneDigits;
+        } else if (phoneDigits.length === 10) {
+            phoneE164 = '+1' + phoneDigits;
+        } else {
+            /* International or unusual — send with + prefix */
+            phoneE164 = '+' + phoneDigits;
+        }
+
+        /* Sender block — submitter contact info */
+        fd.append('fi-sender-fullName', nameVal);
+        fd.append('fi-sender-email', emailVal);
+        fd.append('fi-sender-phone', phoneE164);
+        fd.append('fi-sender-company', bizVal);
+
+        /* URL field — use fi-url- type for website URLs */
+        var websiteVal = form.querySelector('[name="website"]').value.trim();
+        if (websiteVal) fd.append('fi-url-website', websiteVal);
+
+        /* Text fields */
+        var fixVal = form.querySelector('[name="what_to_fix"]').value.trim();
+        if (fixVal) fd.append('fi-text-whatToFix', fixVal);
+
+        /* Select fields */
+        fd.append('fi-select-businessType', typeEl.value);
+
+        var leadsVal = form.querySelector('[name="monthly_leads"]').value;
+        if (leadsVal) fd.append('fi-select-monthlyLeads', leadsVal);
+
+        var jobVal = form.querySelector('[name="average_job_value"]').value;
+        if (jobVal) fd.append('fi-select-averageJobValue', jobVal);
+
+        var empVal = form.querySelector('[name="employees"]').value;
+        if (empVal) fd.append('fi-select-employees', empVal);
+
+        var frustVal = form.querySelector('[name="biggest_frustration"]').value;
+        if (frustVal) fd.append('fi-select-biggestFrustration', frustVal);
+
+        /* Tracking — source tag */
+        fd.append('fi-text-source', 'setu-systems-landing');
+
+        /* Diagnostic logging — field names and whether values exist (not the values themselves) */
+        var fieldLog = [];
+        fd.forEach(function(value, key) {
+            fieldLog.push(key + '=' + (value ? '[set]' : '[empty]'));
+        });
+        console.log('[Setu] Forminit submit started');
+        console.log('[Setu] Form ID:', FORMINIT_ID);
+        console.log('[Setu] FormData fields:', fieldLog);
+        console.log('[Setu] Phone E.164:', phoneE164);
+
+        /*
+         * 5. Submit via Forminit SDK, THEN redirect to Calendly.
+         *    The SDK returns a promise. We await it so the request
+         *    completes before we navigate away from the page.
+         *    If Forminit fails, we log the error but still redirect
+         *    to Calendly so the visitor is never trapped.
+         */
+        var forminitInstance;
+        try {
+            forminitInstance = new Forminit();
+            console.log('[Setu] Forminit SDK initialized successfully');
+        } catch (sdkErr) {
+            console.error('[Setu] Forminit SDK failed to initialize:', sdkErr);
+            window.location.href = calendlyUrl;
+            return;
+        }
+
+        var redirected = false;
+        function doRedirect() {
+            if (redirected) return;
+            redirected = true;
+            submitting = false;
+            btnSubmit.disabled = false;
+            btnText.textContent = 'Save Information \u0026 Proceed to Calendar';
+            window.location.href = calendlyUrl;
+        }
+
+        forminitInstance.submit(FORMINIT_ID, fd)
+            .then(function(result) {
+                if (result.error) {
+                    console.error('[Setu] Forminit submission FAILED:', JSON.stringify(result.error));
+                } else {
+                    console.log('[Setu] Forminit submission OK — hashId:', result.data && result.data.hashId);
+                    /* Reset form only on confirmed success */
+                    form.reset();
+                }
+                /* Redirect to Calendly regardless — never trap the visitor */
+                doRedirect();
+            })
+            .catch(function(err) {
+                console.error('[Setu] Forminit network/SDK error:', err && err.message ? err.message : err);
+                /* Still redirect to Calendly */
+                doRedirect();
+            });
+
+        /* Safety net: if Forminit hangs for more than 8s, redirect anyway */
+        setTimeout(function() {
+            if (!redirected) {
+                console.warn('[Setu] Forminit timeout (8s) — redirecting to Calendly');
+                doRedirect();
+            }
+        }, 8000);
+    });
+
+    /* Clear invalid styling on input */
+    form.addEventListener('input', function(e) {
+        if (e.target.classList.contains('invalid')) {
+            e.target.classList.remove('invalid');
+        }
+    });
+    form.addEventListener('change', function(e) {
+        if (e.target.classList.contains('invalid')) {
+            e.target.classList.remove('invalid');
+        }
+    });
+})();
+</script>
+</body>
+</html>
